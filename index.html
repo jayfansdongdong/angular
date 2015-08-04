@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="todoApp">
+<head>
+	<script src="js/angular.min.js"></script>
+	<script src="js/todo.js"></script>
+</head>
+<style>
+	.done-true {
+		  text-decoration: line-through;
+		  color: grey;
+		}
+</style>
+<body>
+	<h2>Todo</h2>
+	<!-- TodoListController 是todo.js中定义的类名 此处生成一个xx对象 -->
+	<!-- <div ng-controller="TodoListController as xx">  
+		<span>{{xx.remaining()}} of {{xx.todos.length}} remaining</span>
+		[ <a href="" ng-click="xx.archive()">archive</a> ]
+		<ul class="unstyled">
+			<li ng-repeat="todo in xx.todos">
+				<input type="checkbox" ng-model="todo.done">
+				<span class="done-{{todo.done}}">{{todo.text}}</span>
+			</li>
+		</ul>
+		<form ng-submit="xx.addTodo()">
+			<input type="text" ng-model="xx.todoText"  size="30" placeholder="add new todo here">
+			<input class="btn-primary" type="submit" value="add">
+		</form>
+	</div> -->
+	<div ng-controller="lei  as object">
+		<span>{{object.remaining()}} of {{object.todos.length}}</span> 
+		<a ng-click="object.archive()" >archive</a>
+		<ul>
+			<li ng-repeat="todo in object.todos">
+				<input type="checkbox" name="" id="" ng-model="todo.done">
+				<label for="" class="done-{{todo.done}}">{{todo.text}}</label>
+			</li>
+		</ul>
+		<form ng-submit="object.addTodo()">
+			<input type="text" name="" id="" ng-model="object.todoText">
+			<input type="submit" value="add">
+		</form>
+	</div>
+</body>
+</html>

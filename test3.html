@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="letterApp">
+<head>
+	<meta charset="utf-8">
+        <script src="js/angular.min.js"></script>
+        
+    </head>
+    <body>
+    	<div ng-controller = "letterController as letter ">
+    		<textarea name="" id="" ng-model="letter.textarea" style="width:300px; height:100px;"></textarea>
+            <span>还可以输入<em ng-bind="letter.leftNum()"></em>个字</span>
+    	</div>
+    </body>
+    <script>
+        angular.module('letterApp',[])
+        .controller('letterController',function(){
+            var letterInput = this;
+            letterInput.textarea = "";
+            letterInput.leftNum = function(){ return 500 - letterInput.textarea.length;}
+        })
+    </script>
+</html>
